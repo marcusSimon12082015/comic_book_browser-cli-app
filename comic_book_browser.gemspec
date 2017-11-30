@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Comic book releases browser}
   spec.description   = %q{Provides details for comic book releases for current week}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/marcusSimon12082015/comic_book_browser-cli-app"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
