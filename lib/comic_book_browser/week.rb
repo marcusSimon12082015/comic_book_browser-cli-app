@@ -11,4 +11,7 @@ class ComicBookBrowser::Week
     week_index = @@all.each_with_index.min_by{|index, week| week.url.length}
     week_index.last
   end
+  def add_comics(comics)
+    @comics = comics
+  end 
 end
