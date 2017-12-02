@@ -7,6 +7,8 @@ class ComicBookBrowser::CLI
 
   def list_weeks
     puts "BROWSE COMIC BOOK RELEASES:"
+    @weeks = ComicBookBrowser::Scraper.scrape_release_weeks
+    #binding.pry
   end
   def menu
     input = nil
