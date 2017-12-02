@@ -1,0 +1,3 @@
+class ComicBookBrowser::Scraper
+  
+end
