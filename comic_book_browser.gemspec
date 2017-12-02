@@ -27,13 +27,13 @@ Gem::Specification.new do |spec|
     f.match(%r{^(test|spec|features)/})
   end
   spec.bindir        = "exe"
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.executables   = ["comic_book_browser"]
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
-  spec.add_development_dependency "pry","~> 0"
-  spec.add_development_dependency "command_line_reporter","~> 0"
-  spec.add_development_dependency "nokogiri","~> 0"
+  spec.add_development_dependency "pry", "~> 0"
+  spec.add_development_dependency 'command_line_reporter', '>=3.0'
+  spec.add_development_dependency "nokogiri", ">= 1.8"
 end

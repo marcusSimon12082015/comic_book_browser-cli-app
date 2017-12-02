@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    comic_book_browser (0.1.0)
+    comic_book_browser (0.2.0)
 
 GEM
   remote: https://rubygems.org/
@@ -39,9 +39,9 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.16)
   comic_book_browser!
-  command_line_reporter
-  nokogiri
-  pry
+  command_line_reporter (>= 3.0)
+  nokogiri (>= 1.8)
+  pry (~> 0)
   rake (~> 10.0)
   rspec (~> 3.0)
 
