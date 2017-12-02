@@ -1,4 +1,7 @@
 class ComicBookBrowser::CLI
+  def initialize
+    @table_view = ComicBookBrowser::ComicsTableView.new
+  end 
   def call
     list_weeks
     menu
@@ -12,10 +15,18 @@ class ComicBookBrowser::CLI
     @weeks.each_with_index do |week, i|
       if current_week_index == i
         puts "#{i+1}. #{week.release_day}".green
-      else 
+      else
         puts "#{i+1}. #{week.release_day}"
       end
     #binding.pry
+  end
+  def list_comics(week_url,input)
+    week = @weeks[input-1]
+    puts "ALL COMICS RELEASED FOR #{week.release_day}"
+
+    week.add_comics(ComicBookBrowser::Scraper.scrape_comics_list(week_url))
+    #using command_line_reporter_gem
+    @table_view.display_comics(week.comics)
   end
   end
   def menu
@@ -25,7 +36,8 @@ class ComicBookBrowser::CLI
       input = gets.strip.downcase
 
       if input.to_i > 0 && input.to_i <= @weeks.length
-        puts "You choose week #{input.to_i}"
+        week = @weeks[input.to_i-1]
+        list_comics(week.url,input.to_i)
       elsif input == "exit"
         break
       else
