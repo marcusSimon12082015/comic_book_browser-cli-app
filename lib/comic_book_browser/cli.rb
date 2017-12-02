@@ -21,6 +21,7 @@ class ComicBookBrowser::CLI
         puts "#{i+1}. #{week.release_day}"
       end
     #binding.pry
+    end
   end
 
   def list_comics(week_url,input)
@@ -31,7 +32,7 @@ class ComicBookBrowser::CLI
     #using command_line_reporter_gem
     @table_view.display_comics(week.comics)
   end
-  
+
   def list_comic_details(comic)
     comic = ComicBookBrowser::Scraper.scrape_comic_details(comic)
     #using command_line_reporter Gem
@@ -47,6 +48,22 @@ class ComicBookBrowser::CLI
       if input.to_i > 0 && input.to_i <= @weeks.length
         week = @weeks[input.to_i-1]
         list_comics(week.url,input.to_i)
+
+        #get comic book details
+        comic_choice = nil
+        while comic_choice != "q"
+          puts "Select comic book number to explore details about the comic!Or Type q to go back to weeks menu"
+          comic_choice = gets.strip.downcase
+          if comic_choice.to_i > 0 && comic_choice.to_i <= week.comics.length
+            comic = week.comics[comic_choice.to_i-1]
+            list_comic_details(comic)
+          elsif comic_choice == "q"
+            list_weeks
+            break
+          else
+            puts "Not a valid comic book selection, Try Again"
+          end
+        end
       elsif input == "exit"
         break
       else
