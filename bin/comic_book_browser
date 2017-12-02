@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require './lib/comic_book_browser'
+
+ComicBookBrowser::CLI.new.call
