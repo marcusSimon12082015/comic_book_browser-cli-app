@@ -14,6 +14,5 @@ class ComicBookBrowser::Scraper
       weeks << week
     end
     weeks
-    binding.pry
   end
 end
