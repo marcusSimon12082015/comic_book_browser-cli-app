@@ -15,7 +15,27 @@ class ComicBookBrowser::Scraper
     end
     weeks
   end
+  #based on week URL we scrape all the comic books that were released on the date
+  #we extract the title,publisher and price
   def self.scrape_comics_list(week_url)
-    
+      comics = []
+      @doc = Nokogiri::HTML(open(@@BASE_URL+week_url))
+      comic_list =
+        @doc.search(".col-main #comic-list-block #comic-list div.media-body.comic-summary")
+      comic_list.each_with_index do |comic, index|
+        title = comic.search("div.comic-title a").text
+        publisher = comic.search("div.comic-details strong").text
+        url = comic.at('a')['href']
+        price = comic.search("div.comic-details").text.split('$')[-1]
+        #if price is not a number we tell the user that price is not set yet
+        if price.to_i == 0
+          price = "Price to be announced"
+        else
+          price = "$#{price}"
+        end
+        comic_obj = ComicBookBrowser::Comic.new(title,publisher,price,url)
+        comics << comic_obj
+      end
+      comics
   end
 end
