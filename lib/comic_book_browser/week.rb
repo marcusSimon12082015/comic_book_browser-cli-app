@@ -7,4 +7,8 @@ class ComicBookBrowser::Week
     @@all << self
     @comics = []
   end
+  def self.get_current_week
+    week_index = @@all.each_with_index.min_by{|index, week| week.url.length}
+    week_index.last
+  end
 end
