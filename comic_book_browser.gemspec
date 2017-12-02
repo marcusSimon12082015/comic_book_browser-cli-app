@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["marcussimon12082015@hotmail.com"]
 
   spec.summary       = %q{Comic book releases browser}
-  spec.description   = %q{Provides details for comic book releases for current week}
+  spec.description   = %q{Provides details for comic book releases for current week, 2 weeks in advance and 2 weeks prior.}
   spec.homepage      = "https://github.com/marcusSimon12082015/comic_book_browser-cli-app"
   spec.license       = "MIT"
 
