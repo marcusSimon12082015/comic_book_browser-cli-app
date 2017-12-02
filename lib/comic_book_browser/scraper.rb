@@ -38,4 +38,17 @@ class ComicBookBrowser::Scraper
       end
       comics
   end
+
+  def self.scrape_comic_details(comic)
+    @doc = Nokogiri::HTML(open(@@BASE_URL+comic.url))
+    comic_description = @doc.search(".listing-description")
+    #COMIC description
+    comic.description = comic_description.search("p").text.strip
+    comic_authors = comic_authors.search(".credits-list")
+    authors = comic_authors.search(".credits-list-right")
+    authors.each do |author|
+      comic.authors << author.search("div a").text
+    end
+    comic
+  end 
 end
