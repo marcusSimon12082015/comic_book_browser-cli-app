@@ -44,11 +44,11 @@ class ComicBookBrowser::Scraper
     comic_description = @doc.search(".listing-description")
     #COMIC description
     comic.description = comic_description.search("p").text.strip
-    comic_authors = comic_authors.search(".credits-list")
+    comic_authors = @doc.search(".credits-list")
     authors = comic_authors.search(".credits-list-right")
     authors.each do |author|
       comic.authors << author.search("div a").text
     end
     comic
-  end 
+  end
 end
