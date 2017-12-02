@@ -9,6 +9,8 @@ $ gem install comic_book_browser
 
 ## Usage
 
+-After installing the gem run this in your terminal 
+
 $ comic_book_browser
 
 ## Development
