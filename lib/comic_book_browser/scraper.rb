@@ -15,4 +15,7 @@ class ComicBookBrowser::Scraper
     end
     weeks
   end
+  def self.scrape_comics_list(week_url)
+    
+  end
 end
