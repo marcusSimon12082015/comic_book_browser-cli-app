@@ -1,7 +1,9 @@
 class ComicBookBrowser::CLI
+
   def initialize
     @table_view = ComicBookBrowser::ComicsTableView.new
-  end 
+  end
+
   def call
     list_weeks
     menu
@@ -20,6 +22,7 @@ class ComicBookBrowser::CLI
       end
     #binding.pry
   end
+
   def list_comics(week_url,input)
     week = @weeks[input-1]
     puts "ALL COMICS RELEASED FOR #{week.release_day}"
@@ -28,7 +31,13 @@ class ComicBookBrowser::CLI
     #using command_line_reporter_gem
     @table_view.display_comics(week.comics)
   end
+  
+  def list_comic_details(comic)
+    comic = ComicBookBrowser::Scraper.scrape_comic_details(comic)
+    #using command_line_reporter Gem
+    @table_view.display_comic(comic)
   end
+
   def menu
     input = nil
     while input != "exit"
