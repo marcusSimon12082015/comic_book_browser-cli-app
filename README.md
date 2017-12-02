@@ -5,23 +5,11 @@ current week, 2 weeks in advance and 2 weeks prior to the current week.
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'comic_book_browser'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install comic_book_browser
+$ gem install comic_book_browser
 
 ## Usage
 
-TODO: Write usage instructions here
+$ comic_book_browser
 
 ## Development
 
@@ -31,7 +19,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/comic_book_browser. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/marcusSimon12082015/comic_book_browser-cli-app. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
@@ -39,4 +27,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the ComicBookBrowser project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/comic_book_browser/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the ComicBookBrowser project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/marcusSimon12082015/comic_book_browser-cli-app/blob/master/CODE_OF_CONDUCT.md).
